@@ -302,8 +302,9 @@
       </fieldset>       
     
       <p>        
-        <style>
-  /* estilo padrão para inputs de submit e reset */
+   <style>
+  /* estilo padrão para inputs de submit e reset e para o botão enviar */
+  .btn,
   input[type="submit"],
   input[type="reset"],
   button.enviar {
@@ -313,21 +314,36 @@
     cursor: pointer;
     font-family: inherit;
     font-size: 14px;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  /* largura fixa para que ambos tenham exatamente o mesmo tamanho */
+  .btn {
+    width: 110px; /* ajuste esse valor conforme desejar */
   }
 
   /* efeito ao passar o mouse */
   input[type="submit"]:hover,
   input[type="reset"]:hover,
-  button.enviar:hover {
+  button.enviar:hover,
+  .btn:hover {
     background-color: #e0e0e0;
+  }
+
+  /* cor do texto do botão Limpar em preto */
+  input[type="reset"] {
+    color: #000;
   }
 </style>
 
-<!-- Botão que redireciona -->
-<button type="button" class="enviar" onclick="window.location.href='localizacao.html'">Enviar</button>
+<!-- Botão que redireciona (mesma largura do Limpar) -->
+<button type="button" class="enviar btn" onclick="window.location.href='localizacao.html'">Enviar</button>
 
-<!-- Botão reset padrão -->
-<input type="reset" value="Limpar">
+<!-- Botão reset padrão (mesma largura e texto em preto) -->
+<input type="reset" class="btn" value="Limpar">
 
       </p>
       
